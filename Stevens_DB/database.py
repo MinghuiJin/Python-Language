@@ -92,6 +92,7 @@ class Repository:
 
             self.majors[major].update_major(flag, course)
 
+
     def print_student_table(self):
         """ generate the prettytable for students summary """
         pt = PrettyTable(field_names = ['CWID', 'Name', 'Major', 'Completed Courses', 'Remaining Required', 'Remaining Electives'])
