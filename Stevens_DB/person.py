@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 28 21:56:00 2018
-
-@author: minghui jin
-"""
 """
 Implementing the Students class and Instructor class storing the information for a single person.
 Student structure: CWID, Name, Major, Courses
@@ -17,12 +10,13 @@ class Student:
     Stores information about a SINGLE student with all of the relevant information including:
     CWID, name, major, courses with corresponding grades.
     """
-    def __init__(self, person_info):
+    def __init__(self, person_info, major_info):
         """ CWID: str; name: str; major: str; courses: defaultdict(str) """ 
         if len(person_info) == 2 or any([item.isspace() for item in person_info]) or '' in person_info:
             raise ValueError("Missing basic information of students!")
         
         self.CWID, self.name, self.major = person_info
+        self.major_info = major_info # all major info including required and elective courses
         self.courses = defaultdict(str)
     
     def add_course(self, course, grade):
